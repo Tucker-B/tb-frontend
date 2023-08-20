@@ -13,8 +13,20 @@ import {
 export default function Header(props: any) {
     const theme = useMantineTheme();
 
+    const mainColor: string =
+        theme.colorScheme === "dark"
+            ? theme.colors.dark[8]
+            : theme.colors.gray[0];
+
     return (
-        <HeaderMantine height={{ base: 50, md: 70 }} p="md">
+        <HeaderMantine
+            height={{ base: 50, md: 70 }}
+            p="md"
+            sx={{
+                backgroundColor: mainColor,
+                border: mainColor,
+            }}
+        >
             <div
                 style={{
                     display: "flex",

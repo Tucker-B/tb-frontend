@@ -3,6 +3,7 @@ import { AppShell, Navbar, Text, useMantineTheme } from "@mantine/core";
 import "./assets/css/app.styles.css";
 import Header from "./components/Header.component";
 import Footer from "./components/Footer.component";
+import Home from "./pages/Home.component";
 import MobileMediaQuery from "./components/media_queries/MobileMediaQuery.component";
 import MobileNavigation from "./components/MobileNavigation.component";
 
@@ -20,8 +21,8 @@ function App() {
                             : theme.colors.gray[0],
                 },
             }}
-            navbarOffsetBreakpoint="sm"
-            asideOffsetBreakpoint="sm"
+            navbarOffsetBreakpoint="10000rem"
+            asideOffsetBreakpoint="10000rem"
             navbar={
                 <MobileMediaQuery>
                     <Navbar
@@ -37,7 +38,7 @@ function App() {
             footer={<Footer />}
             header={<Header opened={opened} setOpened={setOpened} />}
         >
-            <Text>Resize app to see responsive navbar in action</Text>
+            <Home></Home>
         </AppShell>
     );
 }
