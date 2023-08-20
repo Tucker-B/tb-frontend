@@ -1,21 +1,15 @@
 import { useState } from "react";
-import {
-    Anchor,
-    AppShell,
-    Navbar,
-    Aside,
-    Text,
-    MediaQuery,
-    Burger,
-    useMantineTheme,
-    Title,
-} from "@mantine/core";
+import { AppShell, Navbar, Text, useMantineTheme } from "@mantine/core";
 import "./assets/css/app.styles.css";
 import Header from "./components/Header.component";
 import Footer from "./components/Footer.component";
+import MobileMediaQuery from "./components/media_queries/MobileMediaQuery.component";
+import MobileNavigation from "./components/MobileNavigation.component";
+
 function App() {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
+
     return (
         <AppShell
             styles={{
@@ -29,25 +23,16 @@ function App() {
             navbarOffsetBreakpoint="sm"
             asideOffsetBreakpoint="sm"
             navbar={
-                <Navbar
-                    p="md"
-                    hiddenBreakpoint="sm"
-                    hidden={!opened}
-                    width={{ sm: 200, lg: 300 }}
-                >
-                    <Text>Application navbar</Text>
-                </Navbar>
-            }
-            aside={
-                <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-                    <Aside
+                <MobileMediaQuery>
+                    <Navbar
                         p="md"
                         hiddenBreakpoint="sm"
+                        hidden={!opened}
                         width={{ sm: 200, lg: 300 }}
                     >
-                        <Text>Application sidebar</Text>
-                    </Aside>
-                </MediaQuery>
+                        <MobileNavigation />
+                    </Navbar>
+                </MobileMediaQuery>
             }
             footer={<Footer />}
             header={<Header opened={opened} setOpened={setOpened} />}

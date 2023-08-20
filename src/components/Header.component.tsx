@@ -1,14 +1,13 @@
 import { useState } from "react";
-import MobileMediaQuery from "./MobileMediaQuery.component";
-
+import DesktopMediaQuery from "./media_queries/DesktopMediaQuery.component";
+import MobileMediaQuery from "./media_queries/MobileMediaQuery.component";
+import DesktopNavigation from "./DesktopNavigation.component";
 import {
     Header as HeaderMantine,
     MediaQuery,
     Burger,
     Title,
-    Text,
-    Navbar,
-    Anchor,
+    Group,
     useMantineTheme,
 } from "@mantine/core";
 export default function Header(props: any) {
@@ -24,15 +23,6 @@ export default function Header(props: any) {
                 }}
             >
                 <MobileMediaQuery>
-                    <Navbar
-                        p="md"
-                        hidden={!props.opened}
-                        width={{ sm: 200, lg: 300 }}
-                    >
-                        <Text>Application navbar</Text>
-                    </Navbar>
-                </MobileMediaQuery>
-                <MobileMediaQuery>
                     <Burger
                         opened={props.opened}
                         onClick={() => props.setOpened((o: any) => !o)}
@@ -41,13 +31,20 @@ export default function Header(props: any) {
                         mr="xl"
                     />
                 </MobileMediaQuery>
-                <Title order={1}>TB</Title>
-                <div className="classes.link">
-                    <Anchor href="/">Home</Anchor>
-                    <Anchor href="/about">About</Anchor>
-                    <Anchor href="/work">Work</Anchor>
-                    <Anchor href="/contact">Contact</Anchor>
-                </div>
+                <Group
+                    position="apart"
+                    sx={{
+                        width: "100%",
+                        paddingLeft: "2rem",
+                        paddingRight: "2rem",
+                    }}
+                >
+                    <Title order={1}>TB</Title>
+
+                    <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+                        <DesktopNavigation />
+                    </MediaQuery>
+                </Group>
             </div>
         </HeaderMantine>
     );
