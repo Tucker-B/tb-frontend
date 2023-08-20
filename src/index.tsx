@@ -9,6 +9,17 @@ const root = ReactDOM.createRoot(
 root.render(
     <MantineProvider
         theme={{
+            colorScheme: "dark",
+
+            headings: {
+                fontWeight: "bold",
+                fontFamily: "Inria-Serif, serif",
+                sizes: {
+                    h1: { fontSize: "1.75rem" },
+                    h2: { fontSize: "1.5rem" },
+                    h3: { fontSize: "1.25rem" },
+                },
+            },
             fontFamily: "Montserrat, sans-serif",
         }}
         withGlobalStyles
