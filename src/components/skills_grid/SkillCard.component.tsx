@@ -3,17 +3,12 @@ import SkillModal from "./SkillModal.component";
 import SkillCardProps from "./SkillCardProps.interface";
 import { useDisclosure } from "@mantine/hooks";
 
-export default function SkillCard(props: SkillCardProps) {
-    const [opened, { open, close }] = useDisclosure(false);
-    const showSkillModal = () => {
-        return (
-            <SkillModal
-                skillName={props.skillName}
-                skillDescription={props.skillDescription}
-                skillImg={props.skillImg}
-            />
-        );
-    };
+export default function SkillCard({
+    skillName,
+    skillDescription,
+    skillImg,
+    onClick,
+}: SkillCardProps) {
     return (
         <Card
             shadow="xs"
@@ -28,9 +23,11 @@ export default function SkillCard(props: SkillCardProps) {
             }}
             radius="md"
             withBorder
-            onClick={showSkillModal}
+            onClick={() => {
+                onClick(skillName, skillDescription, skillImg);
+            }}
         >
-            <Text align="center">{props.skillName}</Text>
+            <Text align="center">{skillName}</Text>
         </Card>
     );
 }

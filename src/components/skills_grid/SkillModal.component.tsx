@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Group, Text } from "@mantine/core";
-import SkillCardProps from "./SkillCardProps.interface";
+import { Center, Modal, Group, Text } from "@mantine/core";
 
-export default function SkillModal(props: SkillCardProps) {
-    const [opened, { open, close }] = useDisclosure(false);
+import SkillModalProps from "./SkillModalProps.interface";
 
+export default function SkillModal({
+    opened,
+    close,
+    skillName,
+    skillDescription,
+    skillImg,
+}: SkillModalProps) {
     return (
-        <Modal opened={opened} onClose={close} title={props.skillName} centered>
-            <Text>Skill Description: {props.skillDescription}</Text>
-            <Text>Skill Img: {props.skillImg}</Text>
+        <Modal opened={opened} onClose={close} title={skillName} centered>
+            <Center>
+                <Text>Skill Description: {skillDescription}</Text>
+                <Text>Skill Img: {skillImg}</Text>
+            </Center>
         </Modal>
     );
 }
