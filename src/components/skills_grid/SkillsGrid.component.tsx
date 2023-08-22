@@ -3,6 +3,9 @@ import SkillCard from "./SkillCard.component";
 import { useDisclosure } from "@mantine/hooks";
 import SkillModal from "./SkillModal.component";
 import { useState } from "react";
+import reactImg from "../../assets/images/react.png";
+import javaImg from "../../assets/images/java.svg";
+import pythonImg from "../../assets/images/python.svg";
 
 export default function SkillsGrid() {
     const [opened, { open, close }] = useDisclosure(false);
@@ -45,21 +48,21 @@ export default function SkillsGrid() {
             >
                 <SkillCard
                     skillName="React"
-                    skillDescription="Blank"
-                    skillImg=""
+                    skillDescription="I've developed enterprise applications using React, micro front-ends, & Mantine."
+                    skillImg={reactImg}
                     onClick={setSkills}
                 />
 
                 <SkillCard
                     skillName="Java"
                     skillDescription="Blank"
-                    skillImg=""
+                    skillImg={javaImg}
                     onClick={setSkills}
                 />
                 <SkillCard
                     skillName="Python"
                     skillDescription="Blank"
-                    skillImg=""
+                    skillImg={pythonImg}
                     onClick={setSkills}
                 />
                 <SkillCard

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { Center, Modal, Group, Text } from "@mantine/core";
+import { Center, Image, Modal, Group, Stack, Text } from "@mantine/core";
 
 import SkillModalProps from "./SkillModalProps.interface";
 
@@ -12,10 +12,15 @@ export default function SkillModal({
     skillImg,
 }: SkillModalProps) {
     return (
-        <Modal opened={opened} onClose={close} title={skillName} centered>
+        <Modal opened={opened} onClose={close} title={skillName}>
             <Center>
-                <Text>Skill Description: {skillDescription}</Text>
-                <Text>Skill Img: {skillImg}</Text>
+                <Stack>
+                    <Image maw={"10rem"} mx="auto" src={skillImg}>
+                        Skill Img: {skillImg}
+                    </Image>
+
+                    <Text align="center">{skillDescription}</Text>
+                </Stack>
             </Center>
         </Modal>
     );
