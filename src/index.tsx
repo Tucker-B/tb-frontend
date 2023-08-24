@@ -13,7 +13,7 @@ root.render(
 
             headings: {
                 fontWeight: "bold",
-                fontFamily: "Inria-Serif, serif",
+
                 sizes: {
                     h1: { fontSize: "1.75rem" },
                     h2: { fontSize: "1.5rem" },

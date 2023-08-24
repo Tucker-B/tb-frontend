@@ -17,6 +17,7 @@ export default function GreetingCard() {
                         sx={{
                             fontWeight: "bolder",
                             fontFamily: "Montserrat, sans-serif",
+                            color: "#116aee",
                         }}
                         order={1}
                     >

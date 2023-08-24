@@ -51,7 +51,9 @@ export default function Header(props: any) {
                         paddingRight: "2rem",
                     }}
                 >
-                    <Title order={1}>TB</Title>
+                    <Title order={1} sx={{ color: "#116aee" }}>
+                        Tucker Barton
+                    </Title>
 
                     <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
                         <DesktopNavigation />

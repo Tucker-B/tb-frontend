@@ -1,7 +1,5 @@
 import { Card, Image, Text, Transition, useMantineTheme } from "@mantine/core";
-import SkillModal from "./SkillModal.component";
 import SkillCardProps from "./SkillCardProps.interface";
-import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
 export default function SkillCard({
@@ -11,6 +9,12 @@ export default function SkillCard({
     onClick,
 }: SkillCardProps) {
     const [hover, setHover] = useState(false);
+    const hasBlueIcon =
+        skillName === "Docker" ||
+        skillName === "Kubernetes" ||
+        skillName === "Python"
+            ? true
+            : false;
     const altText = `An image of ${skillName}`;
     const theme = useMantineTheme();
 
@@ -47,7 +51,7 @@ export default function SkillCard({
                 alt={altText}
                 sx={{
                     paddingTop: "0.5rem",
-                    filter: hover ? "invert(48%)" : "",
+                    filter: hover && hasBlueIcon ? "invert(48%)" : "",
                 }}
                 withPlaceholder
                 placeholder={
