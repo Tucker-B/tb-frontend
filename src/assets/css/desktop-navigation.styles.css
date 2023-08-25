@@ -1,0 +1,10 @@
+.desktop-navigation-nav-link:hover {
+    background-color: #0664F0;
+    color: white;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.desktop-navigation-nav-link span {
+    font-size: 1.25rem;
+}

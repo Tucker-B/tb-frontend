@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AppShell, Navbar, Text, useMantineTheme } from "@mantine/core";
+import { AppShell, Navbar, useMantineTheme } from "@mantine/core";
 import "./assets/css/app.styles.css";
 import Header from "./components/Header.component";
 import Footer from "./components/Footer.component";
@@ -10,6 +10,8 @@ import Work from "./pages/Work.component";
 import MobileMediaQuery from "./components/media_queries/MobileMediaQuery.component";
 import MobileNavigation from "./components/MobileNavigation.component";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PATHS from "./@types/constants/Paths";
+import MANTINE_THEME from "./@types/constants/MantineTheme";
 
 function App() {
     const theme = useMantineTheme();
@@ -21,7 +23,7 @@ function App() {
                 styles={{
                     main: {
                         background:
-                            theme.colorScheme === "dark"
+                            theme.colorScheme === MANTINE_THEME.DARK
                                 ? theme.colors.dark[8]
                                 : theme.colors.gray[0],
                     },
@@ -44,10 +46,10 @@ function App() {
                 header={<Header opened={opened} setOpened={setOpened} />}
             >
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/work" element={<Work />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path={PATHS.HOME} element={<Home />} />
+                    <Route path={PATHS.ABOUT} element={<About />} />
+                    <Route path={PATHS.WORK} element={<Work />} />
+                    <Route path={PATHS.CONTACT} element={<Contact />} />
                 </Routes>
             </AppShell>
         </Router>

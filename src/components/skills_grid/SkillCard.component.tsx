@@ -1,6 +1,7 @@
-import { Card, Image, Text, Transition, useMantineTheme } from "@mantine/core";
+import { Card, Image, Text } from "@mantine/core";
 import SkillCardProps from "./SkillCardProps.interface";
 import { useState } from "react";
+import "../../assets/css/style-card.styles.css";
 
 export default function SkillCard({
     skillName,
@@ -16,11 +17,10 @@ export default function SkillCard({
             ? true
             : false;
     const altText = `An image of ${skillName}`;
-    const theme = useMantineTheme();
 
     return (
         <Card
-            shadow="xs"
+            shadow="sm"
             sx={{
                 width: "10rem",
                 height: "10rem",
@@ -30,7 +30,8 @@ export default function SkillCard({
                     border: "none",
                 },
             }}
-            radius="md"
+            className="skill-grid--skill-card"
+            radius="xl"
             withBorder
             onClick={() => {
                 onClick(skillName, skillDescription, skillImg);
@@ -42,7 +43,9 @@ export default function SkillCard({
                 setHover(false);
             }}
         >
-            <Text align="center">{skillName}</Text>
+            <Text align="center" sx={{ fontWeight: 500 }}>
+                {skillName}
+            </Text>
             <Image
                 maw={"75%"}
                 mx="auto"
@@ -51,7 +54,10 @@ export default function SkillCard({
                 alt={altText}
                 sx={{
                     paddingTop: "0.5rem",
-                    filter: hover && hasBlueIcon ? "invert(48%)" : "",
+                    filter:
+                        hover && hasBlueIcon
+                            ? "brightness(100) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)"
+                            : "",
                 }}
                 withPlaceholder
                 placeholder={

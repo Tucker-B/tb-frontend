@@ -1,5 +1,8 @@
-import { Anchor, CSSObject, Group, NavLink } from "@mantine/core";
+import { CSSObject, Group, NavLink } from "@mantine/core";
 import { Link } from "react-router-dom";
+import PATHS from "../@types/constants/Paths";
+import "../assets/css/desktop-navigation.styles.css";
+
 export default function DesktopNavigation(props: any) {
     const navLinkStyles: CSSObject = {
         ":hover": { backgroundColor: "#0664F0", cursor: "pointer" },
@@ -14,26 +17,29 @@ export default function DesktopNavigation(props: any) {
             <NavLink
                 label="Home"
                 component={Link}
-                to="/"
-                sx={navLinkStyles}
+                to={PATHS.HOME}
+                className="desktop-navigation-nav-link"
             ></NavLink>
             <NavLink
                 label="About"
                 component={Link}
-                to="/about"
+                to={PATHS.ABOUT}
                 sx={navLinkStyles}
+                className="desktop-navigation-nav-link"
             ></NavLink>
             <NavLink
                 label="Work"
                 component={Link}
-                to="/work"
+                to={PATHS.WORK}
                 sx={navLinkStyles}
+                className="desktop-navigation-nav-link"
             ></NavLink>
             <NavLink
                 label="Contact"
                 component={Link}
-                to="/contact"
+                to={PATHS.CONTACT}
                 sx={navLinkStyles}
+                className="desktop-navigation-nav-link"
             ></NavLink>
         </Group>
     );

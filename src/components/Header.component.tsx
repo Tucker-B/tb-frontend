@@ -23,7 +23,7 @@ export default function Header(props: any) {
             height={{ base: 50, md: 70 }}
             p="md"
             sx={{
-                backgroundColor: mainColor,
+                backgroundColor: "#f8f9fa00",
                 border: mainColor,
             }}
         >
@@ -44,16 +44,16 @@ export default function Header(props: any) {
                     />
                 </MobileMediaQuery>
                 <Group
-                    position="apart"
+                    position="center"
                     sx={{
                         width: "100%",
                         paddingLeft: "2rem",
                         paddingRight: "2rem",
                     }}
                 >
-                    <Title order={1} sx={{ color: "#116aee" }}>
+                    {/* <Title order={1} sx={{ color: "#116aee" }}>
                         Tucker Barton
-                    </Title>
+                    </Title> */}
 
                     <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
                         <DesktopNavigation />

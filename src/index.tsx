@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { Global } from "@mantine/core";
 import { MantineProvider } from "@mantine/core";
+import MANTINE_THEME from "./@types/constants/MantineTheme";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <MantineProvider
         theme={{
-            colorScheme: "dark",
+            colorScheme: "light",
 
             headings: {
                 fontWeight: "bold",

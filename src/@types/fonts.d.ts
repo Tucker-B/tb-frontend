@@ -1,5 +1,6 @@
+import { DefaultMantineColor } from '@mantine/core'
+
 declare module '*.tff'
-import { Tuple, DefaultMantineColor } from '@mantine/core'
 
 type ExtendedCustomColors = "brand" | DefaultMantineColor;
 
