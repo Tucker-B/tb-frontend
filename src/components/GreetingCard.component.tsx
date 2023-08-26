@@ -1,9 +1,19 @@
-import { Card, Center, Stack, Title } from "@mantine/core";
-export default function GreetingCard() {
+import { Card, Center, Stack, Sx, Title } from "@mantine/core";
+import GreetingCardProp from "./GreetingCardProps.interface";
+export default function GreetingCard({
+    firstLine,
+    name,
+    description,
+}: GreetingCardProp) {
     return (
         <Center>
-            <Card shadow="sm" padding="lg" radius="xl" withBorder>
-                <Stack p="md" align="center" sx={{ gap: "0" }}>
+            <Card padding="lg" sx={{ backgroundColor: "#f8f9fa" }}>
+                <Stack
+                    p="md"
+                    align="center"
+                    sx={{ gap: "0" }}
+                    style={{ paddingTop: "0", paddingBottom: "0" }}
+                >
                     <Title
                         sx={{
                             fontWeight: 400,
@@ -12,7 +22,7 @@ export default function GreetingCard() {
                         }}
                         order={3}
                     >
-                        Hey,
+                        {firstLine}
                     </Title>
                     <Title
                         sx={{
@@ -24,7 +34,7 @@ export default function GreetingCard() {
                         }}
                         order={1}
                     >
-                        I'm Tucker.
+                        {name}
                     </Title>
                     <Title
                         sx={{
@@ -35,8 +45,7 @@ export default function GreetingCard() {
                         order={3}
                         align="center"
                     >
-                        I build software for <br />
-                        distributed systems using
+                        {description}
                     </Title>
                 </Stack>
             </Card>

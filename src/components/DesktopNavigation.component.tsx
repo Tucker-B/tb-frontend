@@ -12,6 +12,7 @@ export default function DesktopNavigation(props: any) {
         <Group
             position="right"
             className={`classes.link ${props.className}`}
+            id="desktop-navigation-div-id"
             noWrap={true}
         >
             <NavLink

@@ -1,15 +1,13 @@
-import { useState } from "react";
-import DesktopMediaQuery from "./media_queries/DesktopMediaQuery.component";
 import MobileMediaQuery from "./media_queries/MobileMediaQuery.component";
 import DesktopNavigation from "./DesktopNavigation.component";
 import {
     Header as HeaderMantine,
     MediaQuery,
     Burger,
-    Title,
     Group,
     useMantineTheme,
 } from "@mantine/core";
+
 export default function Header(props: any) {
     const theme = useMantineTheme();
 
@@ -51,10 +49,6 @@ export default function Header(props: any) {
                         paddingRight: "2rem",
                     }}
                 >
-                    {/* <Title order={1} sx={{ color: "#116aee" }}>
-                        Tucker Barton
-                    </Title> */}
-
                     <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
                         <DesktopNavigation />
                     </MediaQuery>

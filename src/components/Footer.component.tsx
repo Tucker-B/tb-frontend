@@ -11,12 +11,13 @@ export default function Footer() {
             height={60}
             p="md"
             sx={{
-                backgroundColor: mainColor,
                 borderColor: mainColor,
+                backgroundColor: "#f8f9fa00",
+                borderTopColor: "#f8f9fa00",
                 display: "none",
             }}
         >
-            Application footer
+            Developed by Tucker Barton
         </FooterMantine>
     );
 }

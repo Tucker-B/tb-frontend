@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppShell, Navbar, useMantineTheme } from "@mantine/core";
 import "./assets/css/app.styles.css";
 import Header from "./components/Header.component";
@@ -16,6 +16,29 @@ import MANTINE_THEME from "./@types/constants/MantineTheme";
 function App() {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = (e: Event) => {
+            const DESKTOP_NAVIGATION_DIV_ID: string = "desktop-navigation-div";
+            const desktopNavigationDiv = document.querySelector(
+                "#desktop-navigation-div-id"
+            );
+
+            if (window.scrollY > 25 && desktopNavigationDiv) {
+                console.log("Not at top!");
+                desktopNavigationDiv.classList.add(DESKTOP_NAVIGATION_DIV_ID);
+            } else if (desktopNavigationDiv != null) {
+                console.log("At top!");
+                desktopNavigationDiv.classList.remove(
+                    DESKTOP_NAVIGATION_DIV_ID
+                );
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <Router>

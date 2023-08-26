@@ -1,16 +1,6 @@
-import { useState } from "react";
-import { useDisclosure } from "@mantine/hooks";
-import {
-    Center,
-    Image,
-    Modal,
-    Group,
-    Stack,
-    Text,
-    CSSObject,
-} from "@mantine/core";
-
+import { Center, Image, Modal, Stack, Text } from "@mantine/core";
 import SkillModalProps from "./SkillModalProps.interface";
+import "../../../assets/css/skill-modal.styles.css";
 
 export default function SkillModal({
     opened,
@@ -25,6 +15,9 @@ export default function SkillModal({
             onClose={close}
             title={skillName}
             sx={{ border: "1px", borderColor: "#116aee" }}
+            radius="xl"
+            shadow="sm"
+            className="skill-grid--skill-modal"
             centered
         >
             <Center>

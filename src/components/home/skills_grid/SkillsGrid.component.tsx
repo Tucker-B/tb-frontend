@@ -1,18 +1,18 @@
-import { Button, Card, Group, Modal, SimpleGrid, Text } from "@mantine/core";
+import { Group, SimpleGrid } from "@mantine/core";
 import SkillCard from "./SkillCard.component";
 import { useDisclosure } from "@mantine/hooks";
 import SkillModal from "./SkillModal.component";
 import { useState } from "react";
-import reactImg from "../../assets/images/react.png";
-import javaImg from "../../assets/images/java.svg";
-import pythonImg from "../../assets/images/python.svg";
-import javaScriptImg from "../../assets/images/javascript.svg";
-import javaScriptTwoImg from "../../assets/images/javascript_two.svg";
-import dockerImg from "../../assets/images/docker.svg";
-import kubernetesImg from "../../assets/images/kubernetes.svg";
-import jenkinsImg from "../../assets/images/jenkins.svg";
-import awsImg from "../../assets/images/aws.svg";
-import gcpImg from "../../assets/images/google_cloud.svg";
+import reactImg from "../../../assets/images/react.png";
+import javaImg from "../../../assets/images/java.svg";
+import pythonImg from "../../../assets/images/python.svg";
+import javaScriptImg from "../../../assets/images/javascript.svg";
+import javaScriptTwoImg from "../../../assets/images/javascript_two.svg";
+import dockerImg from "../../../assets/images/docker.svg";
+import kubernetesImg from "../../../assets/images/kubernetes.svg";
+import jenkinsImg from "../../../assets/images/jenkins.svg";
+import awsImg from "../../../assets/images/aws.svg";
+import gcpImg from "../../../assets/images/google_cloud.svg";
 
 export default function SkillsGrid() {
     const [opened, { open, close }] = useDisclosure(false);
@@ -37,7 +37,7 @@ export default function SkillsGrid() {
         <Group
             align="center"
             sx={{ justifyContent: "center" }}
-            style={{ marginTop: "3rem" }}
+            style={{ marginTop: "2rem" }}
         >
             {/* <Modal opened={opened} onClose={close} title="Authentication">
                 <Text>Hello!</Text>
@@ -53,28 +53,22 @@ export default function SkillsGrid() {
                 cols={3}
                 sx={{
                     justifyItems: "center",
-                    gap: "2.5rem 5rem",
+                    gap: "1.5rem 5rem",
                 }}
             >
-                <SkillCard
-                    skillName="React"
-                    skillDescription="Built enterprise application using React and micro frontends via Webpack 5's Module Federation (WMF), allowing for greater site availability, performance, & maintainability."
-                    skillImg={reactImg}
-                    onClick={setSkills}
-                />
-
-                <SkillCard
-                    skillName="Java"
-                    skillDescription="Developed & owned various APIs for enterprise applications using Java & the Spring framework, in addition to writing custom Java/Groovy scripts, improving certain workflows of project managers by up to 225%."
-                    skillImg={javaImg}
-                    onClick={setSkills}
-                />
                 <SkillCard
                     skillName="Python"
                     skillDescription="Created & owned various Python services for enterprise applications, including a synchronizing service & Flask APIs, resulting in significant reduction of business overhead."
                     skillImg={pythonImg}
                     onClick={setSkills}
                 />
+                <SkillCard
+                    skillName="Java"
+                    skillDescription="Developed & owned various APIs for enterprise applications using Java & the Spring framework, in addition to writing custom Java/Groovy scripts, improving certain workflows of project managers by up to 225%."
+                    skillImg={javaImg}
+                    onClick={setSkills}
+                />
+
                 <SkillCard
                     skillName="JavaScript"
                     skillDescription="Produced various JavaScript scripts to speed up business workflows for an enterprise application, causing up to 50% less time for certain user needs."
@@ -99,6 +93,13 @@ export default function SkillsGrid() {
                     skillImg={jenkinsImg}
                     onClick={setSkills}
                 />
+                <SkillCard
+                    skillName="React"
+                    skillDescription="Built enterprise application using React and micro frontends via Webpack 5's Module Federation (WMF), allowing for greater site availability, performance, & maintainability."
+                    skillImg={reactImg}
+                    onClick={setSkills}
+                />
+
                 <SkillCard
                     skillName="AWS"
                     skillDescription="Deployed all enterprise applications to AWS, using various AWS service such as EKS, EC2, S3, SES, etc. Certified as an AWS Solutions Architect Associate (2022)."

@@ -1,6 +1,11 @@
-.classes.link > a {
-    font-size: 1.5rem;
+html {
+    overflow-y: scroll;
 }
+
 body {
     margin: 0
+}
+
+.classes.link > a {
+    font-size: 1.5rem;
 }

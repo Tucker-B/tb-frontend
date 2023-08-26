@@ -1,7 +1,7 @@
 import { Card, Image, Text } from "@mantine/core";
 import SkillCardProps from "./SkillCardProps.interface";
 import { useState } from "react";
-import "../../assets/css/style-card.styles.css";
+import "../../../assets/css/style-card.styles.css";
 
 export default function SkillCard({
     skillName,
