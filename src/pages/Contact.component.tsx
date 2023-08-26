@@ -1,5 +1,5 @@
-import { Title } from "@mantine/core";
+import ContactMainContent from "../components/contact/ContactMainContent.component";
 
 export default function Contact() {
-    return <Title>Contact Page</Title>;
+    return <ContactMainContent></ContactMainContent>;
 }

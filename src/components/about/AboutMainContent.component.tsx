@@ -42,7 +42,9 @@ export default function AboutMainContent() {
                         paddingRight: "1.25rem",
                     }}
                 >
-                    I work in the financial technology industry developing
+                    Hey, my name is{" "}
+                    <span style={{ color: "#116aee" }}>Tucker Barton</span>. I
+                    work in the financial technology industry developing
                     scalable, reliable & performant enterprise applications.
                     <br />
                     <br />I have loved technology since I was a kid, always
