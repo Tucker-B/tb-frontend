@@ -50,6 +50,9 @@ function App() {
                                 ? theme.colors.dark[8]
                                 : theme.colors.gray[0],
                     },
+                    body: {
+                        marginRight: "0px !important",
+                    },
                 }}
                 navbarOffsetBreakpoint="10000rem"
                 asideOffsetBreakpoint="10000rem"

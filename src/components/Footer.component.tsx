@@ -1,5 +1,4 @@
-import React from "react";
-import { Footer as FooterMantine, useMantineTheme } from "@mantine/core";
+import { Footer as FooterMantine, Text, useMantineTheme } from "@mantine/core";
 export default function Footer() {
     const theme = useMantineTheme();
     const mainColor: string =
@@ -17,7 +16,7 @@ export default function Footer() {
                 display: "none",
             }}
         >
-            Developed by Tucker Barton
+            <Text align="center">Developed by Tucker Barton</Text>
         </FooterMantine>
     );
 }

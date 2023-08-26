@@ -1,8 +1,8 @@
-import { Group, SimpleGrid } from "@mantine/core";
+import { Group, SimpleGrid, Transition } from "@mantine/core";
 import SkillCard from "./SkillCard.component";
 import { useDisclosure } from "@mantine/hooks";
 import SkillModal from "./SkillModal.component";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactImg from "../../../assets/images/react.png";
 import javaImg from "../../../assets/images/java.svg";
 import pythonImg from "../../../assets/images/python.svg";
@@ -19,13 +19,20 @@ export default function SkillsGrid() {
     const [currentSkillName, setCurrentSkillName] = useState("");
     const [currentSkillDescription, setCurrentSkillDescription] = useState("");
     const [currentSkillImg, setCurrentSkillImg] = useState("");
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setMounted(true);
+        }, 500);
+    }, []);
 
     const setSkills = (
         skillName: string,
         skillDescription: string,
         skillImg: string
     ): void => {
-        if (skillImg == javaScriptImg) {
+        if (skillImg === javaScriptImg) {
             skillImg = javaScriptTwoImg;
         }
         setCurrentSkillName(skillName);
@@ -39,9 +46,6 @@ export default function SkillsGrid() {
             sx={{ justifyContent: "center" }}
             style={{ marginTop: "2rem" }}
         >
-            {/* <Modal opened={opened} onClose={close} title="Authentication">
-                <Text>Hello!</Text>
-            </Modal> */}
             <SkillModal
                 opened={opened}
                 close={close}
@@ -49,6 +53,7 @@ export default function SkillsGrid() {
                 skillDescription={currentSkillDescription}
                 skillImg={currentSkillImg}
             ></SkillModal>
+
             <SimpleGrid
                 cols={3}
                 sx={{
@@ -75,6 +80,7 @@ export default function SkillsGrid() {
                     skillImg={javaScriptImg}
                     onClick={setSkills}
                 />
+
                 <SkillCard
                     skillName="Docker"
                     skillDescription="Utilized Docker images & containerization for all applications developed & deployed, enabling easy dependency management & application builds."
@@ -93,6 +99,7 @@ export default function SkillsGrid() {
                     skillImg={jenkinsImg}
                     onClick={setSkills}
                 />
+
                 <SkillCard
                     skillName="React"
                     skillDescription="Built enterprise application using React and micro frontends via Webpack 5's Module Federation (WMF), allowing for greater site availability, performance, & maintainability."

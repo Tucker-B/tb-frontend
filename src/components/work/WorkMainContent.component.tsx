@@ -29,7 +29,13 @@ export default function WorkMainContent() {
                 <GreetingCard
                     firstLine=""
                     name={
-                        <Text sx={{ lineHeight: "1" }} align="center">
+                        <Text
+                            sx={{
+                                lineHeight: "1",
+                                fontFamily: "K2D, sans-serif",
+                            }}
+                            align="center"
+                        >
                             Work Experience
                         </Text>
                     }

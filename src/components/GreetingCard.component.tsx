@@ -1,4 +1,4 @@
-import { Card, Center, Stack, Sx, Title } from "@mantine/core";
+import { Card, Center, Stack, Title } from "@mantine/core";
 import GreetingCardProp from "./GreetingCardProps.interface";
 export default function GreetingCard({
     firstLine,

@@ -1,6 +1,10 @@
-import { Title } from "@mantine/core";
 import AboutMainContent from "../components/about/AboutMainContent.component";
+import FadeInTransition from "../components/FadeInTransition.component";
 
 export default function About() {
-    return <AboutMainContent></AboutMainContent>;
+    return (
+        <FadeInTransition>
+            <AboutMainContent></AboutMainContent>
+        </FadeInTransition>
+    );
 }
