@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-RUN adduser -g dockeruser
+RUN adduser -g "dockeruser" dockeruser
 WORKDIR /home/dockeruser
 
 COPY . .
