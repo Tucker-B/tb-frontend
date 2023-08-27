@@ -6,6 +6,7 @@ import MANTINE_THEME from "./@types/constants/MantineTheme";
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
+
 root.render(
     <MantineProvider
         theme={{
