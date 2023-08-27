@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 const app = express();
 app.use(morgan('combined'));
-const frontendPath = path.join(__dirname, '..', 'tb-frontend', 'build');
+const frontendPath = path.join(__dirname, '..', 'frontend', 'build');
 
 app.use(express.static(frontendPath));
 
