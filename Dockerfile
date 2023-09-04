@@ -1,7 +1,6 @@
 FROM node:18-alpine
 
-RUN adduser -g "dockeruser"
-WORKDIR /home/dockeruser
+USER root
 
 COPY . .
 WORKDIR ./frontend
